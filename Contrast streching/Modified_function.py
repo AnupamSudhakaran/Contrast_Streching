@@ -55,9 +55,10 @@ def funct_min(img,i,j,channel):
 for i in range(n):
     for j in range(m):
         
-        img[i,j][0]=((((img[i,j][0]-funct_min(img,i,j,0))/(funct_max(img,i,j,0)-funct_min(img,i,j,0)))*255)**0.7)%255
-        img[i,j][1]=((((img[i,j][1]-funct_min(img,i,j,1))/(funct_max(img,i,j,1)-funct_min(img,i,j,1)))*255)**0.7)%255
-        img[i,j][2]=((((img[i,j][2]-funct_min(img,i,j,2))/(funct_max(img,i,j,2)-funct_min(img,i,j,2)))*255)**0.7)%255
+        factor=0.7#Edit this parameter to change the intensity values.
+        img[i,j][0]=((((img[i,j][0]-funct_min(img,i,j,0))/(funct_max(img,i,j,0)-funct_min(img,i,j,0)))*255)**factor)%255
+        img[i,j][1]=((((img[i,j][1]-funct_min(img,i,j,1))/(funct_max(img,i,j,1)-funct_min(img,i,j,1)))*255)**factor)%255
+        img[i,j][2]=((((img[i,j][2]-funct_min(img,i,j,2))/(funct_max(img,i,j,2)-funct_min(img,i,j,2)))*255)**factor)%255
 
 
 
